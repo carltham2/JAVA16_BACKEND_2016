@@ -34,11 +34,11 @@ public class User {
         this.password = password;
     }
 
-    public boolean isSessionTimedOut() {
+    public boolean sessionIsTimedOut() {
 
         long now = new Date().getTime();
         boolean sessionTimedOut =
-                loginTime.getTime()+ Constants._TIME_TO_LIVE_IN_MILLISECONDS
+                (loginTime.getTime()+ Constants._TIME_TO_LIVE_IN_MILLISECONDS)
                 < now;
         return sessionTimedOut;
     }
