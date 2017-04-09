@@ -17,18 +17,6 @@ import javax.servlet.http.HttpSession;
 public class LoginServlet extends HttpServlet {
 
     @Override
-    public void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html");
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        PrintWriter writer = response.getWriter();
-        writer.println("Från GET :");
-        String message = "Username is : " + username + "<br/> Password is :" + password;
-        writer.println(message);
-    }
-
-    @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
