@@ -39,6 +39,7 @@
                         <webModule>
                             <groupId>${project.groupId}</groupId>
                             <artifactId>mypages</artifactId>
+                            <context-root>mypages</context-root>
                         </webModule>
                         <webModule>
                             <groupId>${project.groupId}</groupId>

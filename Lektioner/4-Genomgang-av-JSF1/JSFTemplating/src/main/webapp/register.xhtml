@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>         
+        <h:outputStylesheet name="default.css" library="css" />
+        <!--<link rel="stylesheet"  type="text/css" href="css/default.css" />-->
+    </h:head>
+    <h:body>
+        <h2>JSF Login Page Sample</h2>        
+        <div class="rcorners">
+            <h:form id="testFormTag"> 
+                User Name: <h:inputText
+                    id="userName"
+                    value="${userRegistrationPageBean.user.userName}"/><br/> 
+                User Password: <h:inputSecret
+                    id="password1"
+                    value="${userRegistrationPageBean.user.password1}"/><br/> 
+                User Password(bekräfta): <h:inputSecret
+                    id="password2"
+                    value="${userRegistrationPageBean.user.password2}"/><br/> 
+                User E-post: <h:inputText
+                    id="email1"
+                    value="${userRegistrationPageBean.user.email1}"/><br/> 
+                User E-post(bekräfta): <h:inputText
+                    id="email2"
+                    value="${userRegistrationPageBean.user.email2}"/><br/> 
+                User Namn: <h:inputText
+                    id="name"
+                    value="${userRegistrationPageBean.user.fullName}"/><br/> 
+                <h:commandButton id="save" value="Registrera"
+                                 action="${userRegistrationPageBean.register}"/>
+            </h:form>
+        </div>
+    </h:body>
+</html>
+

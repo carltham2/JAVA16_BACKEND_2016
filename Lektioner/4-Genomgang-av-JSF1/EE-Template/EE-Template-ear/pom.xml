@@ -2,15 +2,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>gameadmin</artifactId>
-        <groupId>se.nackademin</groupId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
+    <artifactId>EE-Template</artifactId>
+    <groupId>se.nackademin</groupId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
 
-    <artifactId>gameadmin-ear</artifactId>
+    <groupId>se.nackademin</groupId>
+    <artifactId>EE-Template-ear</artifactId>
+    <version>1.0-SNAPSHOT</version>
     <packaging>ear</packaging>
 
-    <name>gameadmin-ear</name>
+    <name>EE-Template-ear</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -34,39 +36,21 @@
                 <configuration>
                     <version>6</version>
                     <defaultLibBundleDir>lib</defaultLibBundleDir>
-                    
-                    <modules>
-                        <webModule>
-                            <groupId>${project.groupId}</groupId>
-                            <artifactId>mypages</artifactId>
-                            <context-root>mypages</context-root>
-                        </webModule>
-                        <webModule>
-                            <groupId>${project.groupId}</groupId>
-                            <artifactId>backend</artifactId>
-                        </webModule>
-                    </modules>
-                    
                 </configuration>
             </plugin>
         </plugins>
     </build>
     <dependencies>
         <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>common</artifactId>
-            <version>${project.version}</version>
+            <groupId>se.nackademin</groupId>
+            <artifactId>EE-Template-ejb</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>ejb</type>
         </dependency>
         <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>backend</artifactId>
-            <version>${project.version}</version>
-            <type>war</type>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>mypages</artifactId>
-            <version>${project.version}</version>
+            <groupId>se.nackademin</groupId>
+            <artifactId>EE-Template-web</artifactId>
+            <version>1.0-SNAPSHOT</version>
             <type>war</type>
         </dependency>
     </dependencies>

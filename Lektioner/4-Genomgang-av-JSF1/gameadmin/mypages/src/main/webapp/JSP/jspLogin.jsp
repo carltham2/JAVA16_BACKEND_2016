@@ -13,7 +13,6 @@
         <link rel="stylesheet"  type="text/css" href="../css/default.css" />
     </head>
     <body>
-        <title></title>
         <h2>JSP Login Page Sample</h2>
         <div class="rcorners">
             <form action="login.jsp" method="post"> 

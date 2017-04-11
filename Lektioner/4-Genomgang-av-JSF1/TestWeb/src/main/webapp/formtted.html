@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            pre {
+                display: block;
+                padding: 10px;
+                margin: 10px;
+                font-size: 13px;
+                line-height: 20px;
+                word-break: break-all;
+                word-wrap: break-word;
+                background-color: #f5f5f5;
+                border: 1px solid #ccc;
+                border: 1px solid rgba(0,0,0,0.15);
+                -webkit-border-radius: 4px;
+                -moz-border-radius: 4px;
+                border-radius: 4px;
+            }
+            ul {
+                clear: both;                
+                padding: 0px;
+                margin: 0px;
+                list-style: none;
+                white-space: normal;
+            }
+            li {
+                white-space: pre;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h3>Förberedelser Lektion 1 och därmed utbildningsstart</h3>
+        <h4>Läsanvisningar första kursdagen :</h4>>
+        Läs igenom <a href="https://glassfish.java.net/docs/4.0/quick-start-guide.pdf" target="_blank">
+            <b>glassfish</b> quick start, men ladda inte ned glassfish 4.1.2</a>
+        Se till att ni har <b>Linux</b> installerati er dator
+        <pre>
+            En Virtualbox (Windows - användare) med minst 4 GB minne, 2 kärnor och HD på (expanderande till) 40 GB<br/>
+            duger, men en Bare metal installation på en laptop med 8 GB minne och minst 80 GB disk vore nog önskvärt.<br/>
+            Personligen föredrar jag Linuxmint som är en bekväm desktop Linux variant, men Ubuntu, fedora etc går bra,<br/>
+            så länge ni känner er hemma med den.<br/>
+            Linuxmint och Ubuntu kan jag supporta er på, de andra varianterna bör ni vara väl hemma med om ni använder dem.
+        </pre>
+        Installera utvecklingsverktyg(-en)
+        <pre>
+            Utvecklingsvertygen vi kommer att använda är <b>Netbeans</b> <strike>(mitt val) samt <b>IntelliJ</b></strike>.<br/>
+            Installera Netbeans med endast glassfish (4.1.1) som server<br/>
+            Alla andra IDE's anvander ni pa eget bevag och inget stod finns att fa for dessa under lektionstid.
+        </pre>
+        Samla alla verktyg i en folderEx i foldern <b>/development</b> där ex
+        <pre>
+java kommer att ligga i foldern /development/<b>java</b>/jdk-8u121-linux-x64<br/>
+Maven i foldern /development/<b>tools</b>/apache-maven-3.3.9,<br/>
+Netbeans i foldern /development/<b>tools</b>/Netbeans_8.2...,<br/>
+Glassfish i foldern /development/<b>servers</b>/glassfish-4.1.1<br/>
+osv.<br/>
+        </pre>
+        Tools
+        <pre>
+            <ul>
+                <li><b>Java</b> : 
+                    <a href="http://download.oracle.com/otn-pub/java/jdk/8u121-b13/e9e7ea248e2c4826b92b3f075a80e441/jdk-8u121-linux-x64.tar.gz" target="_blank">jdk-8u121-linux-x64</a>
+                </li>
+                <li><b>Maven</b> :
+                    <a href="http://apache.mirrors.spacedump.net/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz" target="_blank">apache-maven-3.3.9</a>
+                </li>
+                <li><b>Git</b>:
+                    den version ert OS tillhandahåller ( anvand systemets installerare, ex apt-get...
+                </li>
+                <li><b>GUI git tool</b> :
+                    <a href="http://www.syntevo.com/smartgit/download?file=smartgit/smartgit-linux-17_0_3.tar.gz" target="_blank">Smartgit</a>                    
+                </li>
+                <li><b>Databasen MySQL</b> :
+                    den version ert OS tillhandahåller ( anvand systemets installerare, ex apt-get...
+                </li>
+                <li><b>Web api test tool</b> :
+                    <a href="https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en" target="_blank">POSTMAN</a>
+                    (chrome) är testverktyget vi kommer att använda, men givetvist går <b>BURP</b> lika bra.
+                </li>
+            </ul>
+        </pre>
+        ----------------------------------------------------------------------------------------------------
+        <h4>
+            <b>Läs igenom detta snarast.</b>
+        </h4>
+        <a href="http://daily-scrum.com/scrum/quick-start" target="_blank" rel="noreferrer">
+        </a>
+        <pre>
+            <h4><a href="http://daily-scrum.com/scrum/quick-start" target="_blank" rel="noreferrer">Quick start for scrum projects</a><br/></h4>
+            Vi kommer inte att tillämpa precis allt som står här, utan hålla oss till en light-variant av Scrum.
+            Jag skulle vilja att varje team utser en scrum master som håller koll på teamets scrummöten,<br/>
+            men som aktivt deltar i utvecklingsarbetet som fullvärdig utvecklare.<br/>
+            Jag skulle vilja att varje team utser en ställföreträdande Product Owner som i samordning med mig justerar<br/> 
+            product backlog och testar, godkänner produkten och genomför en demo för mig och de andra PO's och i praktiken samtliga elever.<br/>
+            Jag är PO för samtliga team och har ansvaret inför kunden, dvs Nackademin.
+        </pre>
+        ----------------------------------------------------------------------------------------------------
+        Las och forsta om Clean Code
+        <a href="http://www.garshol.priv.no/blog/105.html" target="_blank">http://www.garshol.priv.no/blog/105.html</a>
+        ----------------------------------------------------------------------------------------------------
+        Github
+        <pre>
+            Eftersom det inte gar att registrera fler an 5 anvandare pa bitbucket sa far vi kora pa Github istallet.<br/>
+            Sa har kommer en lank for access till
+            <a href="https://github.com/carltham2/JAVA16_BACKEND_2016" target="_blank" rel="noreferrer">
+                vara projekt pa github
+            </a>
+            istallet - registrera er for att fa tillgang till kod o dyl.<br/>
+            /Carl<br/>
+        </pre>
+    </body>
+</html>
