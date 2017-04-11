@@ -9,19 +9,22 @@ import java.util.Map;
  * Created by carl on 04/04/17.
  */
 public class FakeDB {
+
+    public static User getUser(String userName) {
+        return getInstance().getUsersMap().get(userName);
+    }
     private Map<String, User> _usersMap = new HashMap<>();
 
     private static FakeDB _instance;
 
-    private FakeDB()
-    {
+    private FakeDB() {
         User user = new User();
-        getUsersMap().put(user.getUserName(),user);
+        getUsersMap().put(user.getUserName(), user);
     }
 
-    public static User register(User user) {
+    public static User doRegister(User user) {
         getInstance().getUsersMap().put(user.getUserName(), user);
-        user.setIsActive(true);
+        user.setActive(true);;
         return user;
     }
 
@@ -39,8 +42,8 @@ public class FakeDB {
     }
 
     public static FakeDB getInstance() {
-        if (_instance == null) { 
-            setInstance(new FakeDB()); 
+        if (_instance == null) {
+            setInstance(new FakeDB());
         }
         return _instance;
     }
@@ -48,5 +51,5 @@ public class FakeDB {
     public static void setInstance(FakeDB instance) {
         FakeDB._instance = instance;
     }
-    
+
 }

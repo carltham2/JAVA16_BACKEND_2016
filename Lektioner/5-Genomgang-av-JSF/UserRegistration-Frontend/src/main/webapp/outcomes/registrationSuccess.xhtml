@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="../templates/defaultTemplate.xhtml">
+            <ui:define name="header">               
+                <h3>Hej och välkommen ${registerBean.selectedUser.userName}</h3>
+            </ui:define>
+
+            <ui:define name="content">
+                <h4>Du är nu registrerad med följande uppgifter : </h4>
+                <h:form id="registerForm">
+                    <h:panelGrid columns="2">
+                        <h:outputText value="Användarnamn"/>
+
+                        <h:inputText disabled="true" id="userName" value="${registerBean.selectedUser
+                                                                            .userName}"/>
+
+                        <h:outputText value="Aktiverad"/>
+                        <h:outputText
+                            id="active"
+                            value="${registerBean.selectedUser
+                                     .active}"/>
+
+                        <h:outputText value="Lösenord"/>
+                        <h:outputLabel
+                            id="password"
+                            value="${registerBean.selectedUser
+                                     .password}"/>
+
+                        <h:outputText value="E-post"/>
+                        <h:outputLabel id="email" value="${registerBean.selectedUser
+                                                           .email}"/>                        
+                    </h:panelGrid>
+                </h:form>
+                <ui:include src="../defaultComponents/defaultFooter.xhtml"/>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

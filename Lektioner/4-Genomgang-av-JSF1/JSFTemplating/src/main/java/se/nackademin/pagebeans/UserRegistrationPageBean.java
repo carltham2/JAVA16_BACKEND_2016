@@ -33,6 +33,6 @@ public class UserRegistrationPageBean {
 
     public String register() {
         User registeredUser = FakeDB.register(getUser());
-        return "" + registeredUser.isIsActive();
+        return "";
     }
 }
