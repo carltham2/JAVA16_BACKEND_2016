@@ -25,7 +25,11 @@ public class LoginPageBean {
     private User selectedUser;
 
     public String doLogin() {
-        getSessionHandler().save(getSelectedUser());
+        if (getSessionHandler().retrieve(getSelectedUser().getId())) {
+            throw new RuntimeException("Du är redan inloggad "
+                    + getSelectedUser().getUserName());
+        }
+        getSessionHandler().persist(getSelectedUser());
         return "/userPages/welcome.xhtml";
     }
 

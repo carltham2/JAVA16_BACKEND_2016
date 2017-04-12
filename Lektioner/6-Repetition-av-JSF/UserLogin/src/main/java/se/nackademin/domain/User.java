@@ -5,14 +5,28 @@
  */
 package se.nackademin.domain;
 
+import java.util.UUID;
+import se.nackademin.session.IPersistable;
+
 /**
  *
  * @author carl
  */
-public class User {
+public class User implements IPersistable {
 
+    private String id;
     private String userName;
     private String password;
+
+    @Override
+    public String getId() {
+        return id;
+    }
+
+    public User() {
+        id = UUID.randomUUID().toString();
+    }
+    
 
     // Getters and setters
     public String getUserName() {
