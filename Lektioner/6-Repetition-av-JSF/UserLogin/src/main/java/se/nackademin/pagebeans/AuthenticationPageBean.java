@@ -17,7 +17,7 @@ import se.nackademin.session.SessionBean;
  */
 @Named
 @RequestScoped
-public class LoginPageBean {
+public class AuthenticationPageBean {
 
     @Inject
     SessionBean sessionHandler;
@@ -25,18 +25,23 @@ public class LoginPageBean {
     private User selectedUser;
 
     public String doLogin() {
-        if (getSessionHandler().retrieve(getSelectedUser().getId())) {
+        if (getSessionHandler().retrieve(getSelectedUser().getId())!=null) {
             throw new RuntimeException("Du är redan inloggad "
                     + getSelectedUser().getUserName());
         }
         getSessionHandler().persist(getSelectedUser());
         return "/userPages/welcome.xhtml";
     }
+    
+    public String doLogout() {
+        getSessionHandler().remove(getSelectedUser().getId());
+        return "/index.xhtml";
+    }
 
     // Getters and setters
     public User getSelectedUser() {
         if (selectedUser == null) {
-            selectedUser = new User();
+            selectedUser = new User(); 
         }
         return selectedUser;
     }

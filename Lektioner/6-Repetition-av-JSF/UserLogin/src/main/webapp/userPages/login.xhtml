@@ -15,11 +15,11 @@
             <ui:define name="content">
                 <h:form>
                     <h:inputText
-                        id="userName" value="${loginPageBean.selectedUser.userName}"/>
+                        id="userName" value="${authenticationPageBean.selectedUser.userName}"/>
                     <h:inputText
-                        id="password" value="${loginPageBean.selectedUser.password}"/>
+                        id="password" value="${authenticationPageBean.selectedUser.password}"/>
                     <h:commandButton
-                        id="doLogin" value="Login" action="${loginPageBean.doLogin()}"/>
+                        id="doLogin" value="Login" action="${authenticationPageBean.doLogin()}"/>
                 </h:form>
                 Hello from Facelets               
             </ui:define>

@@ -19,20 +19,28 @@ import se.nackademin.domain.User;
 @Named
 @SessionScoped
 public class SessionBean implements Serializable {
-
+    
     private Map<String, Object> _objectMap = new HashMap<>();
-
+    
     public SessionBean() {
     }
-
     
     public <PERSISTABLETYPE extends IPersistable> void persist(PERSISTABLETYPE object) {
         _objectMap.put(object.getId(), object);
     }
-
+    
     public <PERSISTABLETYPE> PERSISTABLETYPE retrieve(String id) {
-        PERSISTABLETYPE foundObject = (PERSISTABLETYPE) _objectMap.get(id);
+        Object tmpUser = _objectMap.get(id);
+        PERSISTABLETYPE foundObject = null;
+        if (tmpUser != null) {            
+            foundObject = (PERSISTABLETYPE) _objectMap.get(id);
+        }
         return foundObject;
     }
 
+    public Object remove(String id) {
+        Object tmpObject = _objectMap.remove(id);
+        return tmpObject;
+    }
+    
 }

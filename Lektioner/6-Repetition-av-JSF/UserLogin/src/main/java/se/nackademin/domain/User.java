@@ -24,7 +24,7 @@ public class User implements IPersistable {
     }
 
     public User() {
-        id = UUID.randomUUID().toString();
+        id = "15";
     }
     
 
