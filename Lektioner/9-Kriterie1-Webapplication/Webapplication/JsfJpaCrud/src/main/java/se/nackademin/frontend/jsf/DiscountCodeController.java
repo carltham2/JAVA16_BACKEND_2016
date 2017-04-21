@@ -40,7 +40,7 @@ import javax.faces.convert.Converter;
 import javax.faces.model.SelectItem;
 import se.nackademin.backend.jpa.controllers.DiscountCodeJpaController;
 import se.nackademin.backend.jpa.entities.DiscountCode;
-import se.nackademin.frontend.jsf.util.JsfUtil;
+import jsf.util.JsfUtil;
 import se.nackademin.backend.jpa.controllers.exceptions.NonexistentEntityException;
 import se.nackademin.backend.jpa.controllers.exceptions.IllegalOrphanException;
 import se.nackademin.frontend.jsf.util.PagingInfo;

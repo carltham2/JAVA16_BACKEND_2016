@@ -40,7 +40,7 @@ import javax.faces.convert.Converter;
 import javax.faces.model.SelectItem;
 import se.nackademin.backend.jpa.controllers.MicroMarketJpaController;
 import se.nackademin.backend.jpa.entities.MicroMarket;
-import se.nackademin.frontend.jsf.util.JsfUtil;
+import jsf.util.JsfUtil;
 import se.nackademin.backend.jpa.controllers.exceptions.NonexistentEntityException;
 import se.nackademin.frontend.jsf.util.PagingInfo;
 
