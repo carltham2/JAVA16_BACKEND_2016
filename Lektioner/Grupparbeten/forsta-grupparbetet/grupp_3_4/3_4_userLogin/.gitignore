@@ -1,0 +1,7 @@
+/target/*
+
+*.jar
+*.war
+*.class
+*.lst
+/nb-configuration.xml
