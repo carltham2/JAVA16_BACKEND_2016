@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="/templates/defaultTemplate.xhtml">
+            <ui:define name="header">                
+                <h3>Välkommen till registreringssidan</h3>
+            </ui:define>
+            <ui:define name="content">
+                <h:form>
+                    <p:panel id="panel" header="Registrera">
+
+                        <p:messages id="msgs" />
+
+                        <h:panelGrid columns="2" cellpadding="5">
+                            <p:outputLabel for="username" value="Username: "/>
+                            <p:inputText id="username" value="#{registration.username}" required="true" label="Username">
+                                <f:validateLength minimum="2" />
+                                <p:ajax update="msgUsername" event="keyup"/>
+                            </p:inputText>
+                            <p:message for="username" id="msgUsername" display="icon"/>
+                            <p:separator/>
+                            <p:outputLabel for="password1" value="Password: "/>
+                            <p:password id="password1" value="#{registration.password}" label="Password" required="true">
+                                <f:validateLength minimum="2" />
+                                <p:ajax update="msgPassword1" event="keyup"/>
+                            </p:password>
+                            <p:message for="password1" id="msgPassword1" display="icon" />
+                            <p:separator/>
+                            <p:outputLabel for="password2" value="Password: " />
+                            <p:password id="password2" value="#{registration.password}" label="Password" required="true">
+                                <f:validateLength minimum="2" />
+                                <p:ajax update="msgPassword2" event="keyup" />
+                            </p:password>
+                            <p:message for="password2" id="msgPassword2" display="icon" />
+                            <p:separator/>
+                            <p:commandButton value="Registrera" update="panel" actionListener="#{registration.doRegister}" icon="ui-icon-check" />
+
+                        </h:panelGrid>
+
+                    </p:panel>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+
