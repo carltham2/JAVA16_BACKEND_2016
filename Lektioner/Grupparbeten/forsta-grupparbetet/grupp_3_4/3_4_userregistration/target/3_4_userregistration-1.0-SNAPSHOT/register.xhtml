@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+>
+
+<h:head>
+    <title>Facelet Title</title>
+</h:head>
+<h:body>
+    <ui:composition template="templates/defaultTemplate.xhtml">
+
+        <ui:define name="header">
+            <h3>Du är i användarregistrering</h3>
+        </ui:define>
+
+        <ui:define name="content">
+
+            <h:form>
+                <p:messages id="messages" showDetail="true" autoUpdate="true"/>
+
+                <h:panelGrid columns="2" id="matchGrid" cellpadding="5">
+
+                    <h:outputLabel for="userName" value="User name: *"/>
+                    <p:inputText id="userName" value="#{registerBean.userName}" label="User name" required="true"/>
+
+                    <h:outputLabel for="email" value="Email: *"/>
+                    <p:inputText id="email" value="#{registerBean.email}" label="Email" required="true"/>
+
+                    <h:outputLabel for="pwd1" value="Password 1: *"/>
+                    <p:password id="pwd1" value="#{registerBean.password}" match="pwd2" label="Password 1"
+                                required="true"/>
+
+                    <h:outputLabel for="pwd2" value="Password 2: *"/>
+                    <p:password id="pwd2" value="#{registerBean.password}" label="Password 2" required="true"/>
+
+                </h:panelGrid>
+
+                <p:commandButton update="matchGrid" value="Save" action="#{registerBean.doRegister}"/>
+
+
+            </h:form>
+
+            <ui:include src="defaultComponentes/defaultFooter.xhtml"/>
+        </ui:define>
+
+    </ui:composition>
+</h:body>
+</html>
+

@@ -1,0 +1,4 @@
+se/nackademin/services/UserHandler.class
+se/nackademin/domain/User.class
+se/nackademin/pagebeans/RegisterBean.class
+se/nackademin/backend/FakeDB.class
